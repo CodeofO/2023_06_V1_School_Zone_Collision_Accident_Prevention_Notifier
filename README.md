@@ -1,4 +1,4 @@
-<img width="1477" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/0596d0ee-ad28-45c3-8dc1-e5aacc8d7097"># 🚸 V01. 스쿨존 충돌사고 예방 알리미 
+# 🚸 V01. 스쿨존 충돌사고 예방 알리미 
 
 <img width="815" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/c971c29d-c871-4021-99cf-7f327a27613b">
 
