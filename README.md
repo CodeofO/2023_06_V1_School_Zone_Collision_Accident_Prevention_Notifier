@@ -113,9 +113,9 @@
               if cond1: # 알람이 울리는 중 : warning_count_down 업데이트 X
                   pass
               else: # 알람이 마치면 : warning_count_down 업데이트 O
-                  warning_count_down = alraming_time # 💌
+                  warning_count_down = alraming_time
           except:
-              warning_count_down = alraming_time # 💌
+              warning_count_down = alraming_time
       
       if c == 1: 
           real_warning_text1 = warning_text1
