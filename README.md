@@ -1,4 +1,4 @@
-# 🚸 V01. 스쿨존 충돌사고 예방 알리미 
+# 🚸 스쿨존 충돌사고 예방 알리미.V1
   
 <img width="993" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/32f6055b-b644-4b87-8c07-b83ad876675b">
 
