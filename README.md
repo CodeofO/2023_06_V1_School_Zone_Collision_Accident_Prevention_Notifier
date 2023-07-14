@@ -9,10 +9,10 @@
 * 제안배경 : 매년 높아지는 스쿨존 교통사고를 예방하기 위한 아이디어입니다.
 * 핵심 : 
 
-#### **1. 좁은 길의 특성상 주차되어 있는 차량이 많아, 멈춰있는 객체, 움직이는 객체를 분리합니다.**   
+### **1. 좁은 길의 특성상 주차되어 있는 차량이 많아, 멈춰있는 객체, 움직이는 객체를 분리합니다.**   
 <img width="777" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/8b79eb82-e3e4-4a1c-bb22-60391c8f9b6b">  
     
-    ```  
+
         if class_name == 'person':
                             ud = np.exp2(ud + (weight * 2)) # 사람과 차가 겹쳤을 때 사람에게 더 강한 가중치를 주기 위함
         
@@ -40,16 +40,16 @@
                                         thickness=2)
                             
                             print(f'A moving {class_name} detected!!!')
-    ```
 
 
 
-#### **2. 움직이는 객체가 인식이 된 후 일정 조건이 되면 객체가 Warning상태가 됩니다.(조심해야 하는   객체라는 의미)**    
+
+### **2. 움직이는 객체가 인식이 된 후 일정 조건이 되면 객체가 Warning상태가 됩니다.(조심해야 하는   객체라는 의미)**    
 <img width="763" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/a33fc4fb-94f0-49d3-8acd-1ffbb4db9172">    
 <img width="762" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/6eeb6c6b-2314-4b89-8553-b911fbebb21e">  
 
   
-    ```  
+
         # Moving Object에 WARNING 부여                            
         # track_id_{track_id}_count 정의
         try:
@@ -95,13 +95,13 @@
                     cv2.FONT_HERSHEY_SIMPLEX, 0.9, 
                     colors[track_id % len(colors)], 
                     thickness=2)
-    ```
+
   
   
 
-#### **3. 양쪽에서 오는 두 객체가 Warning상태가 되면 알리미는 접근중인 객체의 종류에 맞게 Sign을 점등합니다.**  
+### **3. 양쪽에서 오는 두 객체가 Warning상태가 되면 알리미는 접근중인 객체의 종류에 맞게 Sign을 점등합니다.**  
 <img width="488" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/1da67956-b34a-4fc6-81ef-c923b51fc9e8">  
-    ```
+
       # 양쪽 모두 warning 발생 시 second_track1[2] 업데이트 됨
       if (second_track1[1] != '') & (second_track2[1] != ''): # 두 영상에 모두 WARNING 신호를 줄 때 
           c += 1
@@ -140,7 +140,7 @@
           start_warning_alram = 1 
       else: 
           start_warning_alram = 0 
-    ```
+
 
         
 ✅ **조감도**  
