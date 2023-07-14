@@ -49,51 +49,51 @@ if class_name == 'person':
 
   
 ```  
-    # Moving Object에 WARNING 부여                            
-    # track_id_{track_id}_count 정의
-    try:
-        globals()[f'track_id_{track_id}_count_{sequence}'] += 1 
-    except:
-        globals()[f'track_id_{track_id}_count_{sequence}'] = 1 
-                                                                            
+        # Moving Object에 WARNING 부여                            
+        # track_id_{track_id}_count 정의
+        try:
+            globals()[f'track_id_{track_id}_count_{sequence}'] += 1 
+        except:
+            globals()[f'track_id_{track_id}_count_{sequence}'] = 1 
+                                                                                
+        
+        # WARNING을 주는 기준 : warning_count
+        # warning 조건 달성
+        if globals()[f'track_id_{track_id}_count_{sequence}'] >= warning_count: 
+            cv2.putText(frame, "WARNING", 
+                        (int(x1), int(y1) - 30), 
+                        cv2.FONT_HERSHEY_SIMPLEX, 
+                        #2.5, (0, 0, 255), thickness=3)
+                        2.5, (0, 165, 255), thickness=3) 
+            
+            print(f'Watch out for {class_name}!!!')
     
-    # WARNING을 주는 기준 : warning_count
-    # warning 조건 달성
-    if globals()[f'track_id_{track_id}_count_{sequence}'] >= warning_count: 
-        cv2.putText(frame, "WARNING", 
-                    (int(x1), int(y1) - 30), 
-                    cv2.FONT_HERSHEY_SIMPLEX, 
-                    #2.5, (0, 0, 255), thickness=3)
-                    2.5, (0, 165, 255), thickness=3) 
-        
-        print(f'Watch out for {class_name}!!!')
-
-        # 만약 하나의 track_id 에서 WARNING이 발생한다면 나머지는 0으로 초기화
-        for i in track_ids:  
-            if track_id == i:
-                pass 
-            else: 
-                #globals()[f'track_id_{track_id}_count_{sequence}'] = 0  
-                globals()[f'track_id_{track_id}_count_{sequence}'] = globals()[f'track_id_{track_id}_count_{sequence}'] // 2 
-
-
-        # LED에 신호를 주는 변수 
-        if (class_name == 'car') | (class_name == 'motorbike') | (class_name == 'truck'): 
-            warning_text = 'car' 
-        elif (class_name == 'person') | (class_name == 'bicycle'): 
-            warning_text = 'person' 
-                                    
-    # warning 조건 미달성
+            # 만약 하나의 track_id 에서 WARNING이 발생한다면 나머지는 0으로 초기화
+            for i in track_ids:  
+                if track_id == i:
+                    pass 
+                else: 
+                    #globals()[f'track_id_{track_id}_count_{sequence}'] = 0  
+                    globals()[f'track_id_{track_id}_count_{sequence}'] = globals()[f'track_id_{track_id}_count_{sequence}'] // 2 
+    
+    
+            # LED에 신호를 주는 변수 
+            if (class_name == 'car') | (class_name == 'motorbike') | (class_name == 'truck'): 
+                warning_text = 'car' 
+            elif (class_name == 'person') | (class_name == 'bicycle'): 
+                warning_text = 'person' 
+                                        
+        # warning 조건 미달성
+        else: 
+            pass
+            
     else: 
-        pass
-        
-else: 
-    cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (colors[track_id % len(colors)]), 3)
-    cv2.putText(frame, f"Stopping{track_id}_{class_name}",                                         
-                (int(x1), int(y1) - 10), 
-                cv2.FONT_HERSHEY_SIMPLEX, 0.9, 
-                colors[track_id % len(colors)], 
-                thickness=2)
+        cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (colors[track_id % len(colors)]), 3)
+        cv2.putText(frame, f"Stopping{track_id}_{class_name}",                                         
+                    (int(x1), int(y1) - 10), 
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.9, 
+                    colors[track_id % len(colors)], 
+                    thickness=2)
 ```
   
   
