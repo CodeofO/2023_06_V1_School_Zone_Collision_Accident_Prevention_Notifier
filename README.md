@@ -26,7 +26,7 @@
 <img width="1477" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/9f7fa97d-426f-4fc0-af43-7b36dea14d50">
   
 **Youtube 업로드**  
-👉 https://studio.youtube.com/video/BCXjsv-tun4/edit    
+👉 https://youtu.be/BCXjsv-tun4
     
 **< 참고 자료 >**  
 git-hub : Yolov8   
