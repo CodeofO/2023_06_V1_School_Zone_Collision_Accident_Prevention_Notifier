@@ -18,7 +18,43 @@
 **3. 양쪽에서 오는 두 객체가 Warning상태가 되면 알리미는 접근중인 객체의 종류에 맞게 Sign을 점등합니다.**  
 <img width="488" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/1da67956-b34a-4fc6-81ef-c923b51fc9e8">  
 
+```
+if class_name == 'person':
+                    ud = np.exp2(ud + (weight * 2)) # ⭕️ # 사람과 차가 겹쳤을 때 사람에게 더 강한 가중치를 주기 위함
 
+                if detect_type == 'weight':
+                    cond_ud = (ud > ud_list_mean * weight)
+                elif detect_type == 'square':
+                    cond_ud = (ud ** weight > ud_list_mean ** weight)
+                elif detect_type == 'exp':
+                    cond_ud = (np.exp(ud) > np.exp(ud_list_mean) * weight)
+                elif detect_type == 'exp2':
+                    cond_ud = (np.exp2(ud) > np.exp2(ud_list_mean) * weight) # 🐣
+                    
+                elif detect_type == 'expm1':
+                    cond_ud = (np.expm1(ud) > np.expm1(ud_list_mean) * weight)
+                
+                # Identifying Moving Object
+                if cond_ud: # 🍭
+
+                    cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 0, 255), 3)
+                    cv2.putText(frame, f"MOVING_{track_id}_{class_name}",                                         
+                                (int(x1), int(y1) - 10), 
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.9, 
+                                #colors[track_id % len(colors)], 
+                                (0, 0, 255), 
+                                thickness=2)
+                    
+                    print(f'A moving {class_name} detected!!!')
+                    
+                    # Moving Object에 WARNING 부여                            
+                    # track_id_{track_id}_count 정의
+                    try:
+                        globals()[f'track_id_{track_id}_count_{sequence}'] += 1 # 🍭
+                    except:
+                        globals()[f'track_id_{track_id}_count_{sequence}'] = 1 # 🍭
+
+```
         
 ✅ **조감도**  
 <img width="1146" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/224d4d83-f38b-417c-a15f-d039ec954553">
