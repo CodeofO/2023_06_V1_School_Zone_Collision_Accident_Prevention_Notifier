@@ -11,6 +11,9 @@
 ### **1. 좁은 길의 특성에 맞춰 멈춰있는 객체, 움직이는 객체를 분리합니다.**   
 <img width="777" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/8b79eb82-e3e4-4a1c-bb22-60391c8f9b6b">  
 
+<img width="448" alt="image" src="https://github.com/CodeofO/2023_06_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/8c98b029-e9c7-48f4-b8f3-8d69458a89fe">
+
+
 Tracking 된 객체가 frame마다 얼마나 이동하는지를 계산하여 움직이는 객체, 움직이지 않는 객체를 구분하였습니다. 
 
 각 `frame, class name(ex, car, person)`별로 탐지된 객체들의 `bounding box의 중심값의 이동거리`을 계산하여 평균을 계산합니다. 
