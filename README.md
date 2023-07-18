@@ -1,13 +1,15 @@
 # 🚸 스쿨존 충돌사고 예방 알리미.V1
+---
+
   
 <img width="993" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/32f6055b-b644-4b87-8c07-b83ad876675b">
 
 
-
-* 프로젝트 : AI를 이용한 스쿨존(골목길) 충돌사고 예방 알고리즘
-* 주최 : 울산대학교 캡스톤디자인
-* 제안배경 : 매년 높아지는 스쿨존 교통사고를 예방하기 위한 아이디어입니다.
-* 핵심 : 
+- **프로젝트 명** : ***AI를 이용한 스쿨존(골목길) 충돌사고 예방 알고리즘***
+- **주최** : 울산대학교
+- **제안배경** : 매년 높아지는 스쿨존 교통사고를 예방하기 위한 아이디어입니다.
+- **요약** : Object Detection의 알고리즘인 YOLO(v8)과 Object Tracking 알고리즘인 DeepSORT를 베이스로 하였습니다. 우선 객체를 탐지, 추적한 뒤, 커브길에 접근하는 **객체의 위험도를 파악하는 알고리즘을 추가**하여 접근하는 두 객체에 대한 class 정보와 함께 충돌 주의 알림을 주는 아이디어 입니다. 이로써 사회에서 대두되는 골목길이 많은 스쿨존 내 충돌사고를 예방할 수 있습니다.
+- 
 
 ### **1. 좁은 길의 특성상 주차되어 있는 차량이 많아, 멈춰있는 객체, 움직이는 객체를 분리합니다.**   
 <img width="777" alt="image" src="https://github.com/CodeofO/2023_School_Zone_Collision_Accident_Prevention_Notifier/assets/99871109/8b79eb82-e3e4-4a1c-bb22-60391c8f9b6b">  
